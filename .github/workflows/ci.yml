@@ -38,12 +38,15 @@ jobs:
       - name: Run Node starter
         run: npm start --prefix StarterProjects/NodeApp
 
+      - name: Test WebApp
+        run: npm test --prefix StarterProjects/WebApp
+
       - name: Start WebApp
         run: |
           node StarterProjects/WebApp/server.js > webapp.log 2>&1 &
           echo $! > webapp.pid
           sleep 2
 
-      - name: Test WebApp
+      - name: Test WebApp endpoint
         run: |
           curl --fail --silent --show-error http://127.0.0.1:3000
