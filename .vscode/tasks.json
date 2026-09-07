@@ -1,0 +1,29 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Run .NET starter",
+      "type": "shell",
+      "command": "dotnet run --project \"${workspaceFolder}/StarterProjects/DotnetApp/DotnetApp.csproj\"",
+      "problemMatcher": "$msCompile"
+    },
+    {
+      "label": "Run Node starter",
+      "type": "shell",
+      "command": "npm start --prefix \"${workspaceFolder}/StarterProjects/NodeApp\"",
+      "problemMatcher": []
+    },
+    {
+      "label": "Run Python starter",
+      "type": "shell",
+      "command": "python \"${workspaceFolder}/StarterProjects/PythonApp/main.py\"",
+      "problemMatcher": []
+    },
+    {
+      "label": "Test WebApp",
+      "type": "shell",
+      "command": "node -e \"const http=require('node:http'); const req=http.get('http://127.0.0.1:3000', res => { if (res.statusCode !== 200) process.exit(1); console.log('WebApp smoke test passed'); res.resume(); }); req.on('error', () => process.exit(1));\"",
+      "problemMatcher": []
+    }
+  ]
+}
