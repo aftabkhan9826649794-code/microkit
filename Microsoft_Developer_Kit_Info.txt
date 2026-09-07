@@ -1,0 +1,27 @@
+=======================================================
+MICROSOFT DEVELOPER KIT & TOOLS - SYSTEM SCAN SUMMARY
+=======================================================
+Drive C: scan karke Microsoft Developer Kit ke main components locate kiye gaye hain:
+
+1. Microsoft Windows 10 SDK (Windows Kits):
+   Path: C:\Program Files (x86)\Windows Kits\10
+   Contains: Windows Headers, Libs, Bin tools, Windows SDK APIs
+
+2. Microsoft .NET SDK:
+   Path: C:\Program Files\dotnet\sdk
+
+3. Microsoft Visual Studio:
+   Path: C:\Program Files\Microsoft Visual Studio & (x86)
+
+4. Microsoft VS Code & C# Dev Kit:
+   Path: C:\Users\Aftab khan\AppData\Local\Programs\Microsoft VS Code
+   C# Dev Kit: C:\Users\Aftab khan\.vscode\extensions\ms-dotnettools.csdevkit-3.20.199-win32-x64
+
+5. Microsoft Edge DevTools:
+   Path: C:\Users\Aftab khan\source\repos\microsoft\vscode-edge-devtools
+
+6. Microsoft Store & VSIX Packages:
+   - Microsoft.Services.Store.winmd (is folder me copy kiya gaya hai)
+   - Microsoft.VisualStudio.Services.VSIXPackage (is folder me copy kiya gaya hai)
+
+In sabhi developer tools aur SDKs ke direct shortcuts is folder me ready hain.
