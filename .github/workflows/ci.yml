@@ -1,0 +1,49 @@
+name: Developer Kit CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: "10.0.x"
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "24.x"
+
+      - name: Build .NET starter
+        run: dotnet build StarterProjects/DotnetApp/DotnetApp.csproj --configuration Release
+
+      - name: Run Python starter
+        run: python StarterProjects/PythonApp/main.py
+
+      - name: Run Node starter
+        run: npm start --prefix StarterProjects/NodeApp
+
+      - name: Start WebApp
+        run: |
+          node StarterProjects/WebApp/server.js > webapp.log 2>&1 &
+          echo $! > webapp.pid
+          sleep 2
+
+      - name: Test WebApp
+        run: |
+          curl --fail --silent --show-error http://127.0.0.1:3000
